@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"  // or "mysql", "sqlite", "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// Define your models
+model User {
+ id String @id @default(uuid())
+  email     String   @unique
+  name      String?
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  posts     Post[]
+}
+
+model Post {
+  id String @id @default(uuid())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Restaurant {
+  id        String   @id @default(uuid())
+  name      String
+  opensAt   Int
+  closesAt  Int
+  createdAt DateTime @default(now())
+
+  tables       Table[]
+  reservations Reservation[]
+}
+
+model Table {
+  id           String   @id @default(uuid())
+  number       Int
+  capacity     Int
+  restaurantId String  
+
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  reservations Reservation[]
+
+  @@unique([restaurantId, number])
+}
+
+model Reservation {
+  id           String   @id @default(uuid())
+  restaurantId String
+  tableId      String
+  customerName String
+  phone        String
+  partySize    Int
+  startTime    DateTime
+  endTime      DateTime
+  status       ReservationStatus @default(CONFIRMED)
+  createdAt    DateTime @default(now())
+
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id])
+  table      Table      @relation(fields: [tableId], references: [id])
+
+  @@index([tableId, startTime, endTime])
+}
+
+model Waitlist {
+  id            String @id @default(uuid())
+  restaurantId  String
+  partySize     Int
+  customerName  String
+  phone         String
+  createdAt     DateTime @default(now())
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
