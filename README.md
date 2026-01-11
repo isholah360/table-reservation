@@ -128,15 +128,15 @@ https://table-reservation-alpha.vercel.app/api/v1/restaurants/deleteRestaurants/
 
 🪑 Table APIs
 
-https://table-reservation-alpha.vercel.app/api/v1/restaurants/createTable 
+https://table-reservation-alpha.vercel.app/api/v1/tables/createTable 
 
-https://table-reservation-alpha.vercel.app/api/v1/restaurants/getTables 
+https://table-reservation-alpha.vercel.app/api/v1/tables/getTables 
 
-https://table-reservation-alpha.vercel.app/api/v1/restaurants/tables/:id 
+https://table-reservation-alpha.vercel.app/api/v1/tables/tables/:id 
 
-https://table-reservation-alpha.vercel.app/api/v1/restaurants/updateTables/:id 
+https://table-reservation-alpha.vercel.app/api/v1/tables/updateTables/:id 
 
-https://table-reservation-alpha.vercel.app/api/v1/restaurants/deleteTables/:id
+https://table-reservation-alpha.vercel.app/api/v1/tables/deleteTables/:id
 
 
 Reservation API Endpoints:
@@ -223,15 +223,15 @@ For your local api
 
 🪑 Table APIs
 
-/api/v1/restaurants/createTable 
+/api/v1/tables/createTable 
 
-/api/v1/restaurants/getTables 
+/api/v1/tables/getTables 
 
-/api/v1/restaurants/tables/:id 
+/api/v1/tables/tables/:id 
 
-/api/v1/restaurants/updateTables/:id 
+/api/v1/tables/updateTables/:id 
 
-/api/v1/restaurants/deleteTables/:id
+/api/v1/tables/deleteTables/:id
 
 Reservation API Endpoints:
 

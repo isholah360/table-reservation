@@ -68,7 +68,7 @@ export const createReservation = async (req, res, next) => {
       });
 
       return res.status(202).json({
-        message: "No table available. Added to waitlist.",
+        message: "Table is booked already. You're added to the waitlist.",
         waitlistId: waitlistEntry.id,
       });
     }

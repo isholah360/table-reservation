@@ -5,11 +5,15 @@ import tableRouter from './routes/table.route.js';
 import reservationRouter from './routes/reservation.route.js';
 import restRouter from './routes/restaurant.route.js';
 import waitlistRouter from './routes/waitlist.route.js';
+import { errorHandler } from './middlewares/error.middleware.js';
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(errorHandler);
+
+
 app.use('/api/v1/tables', tableRouter);
 app.use('/api/v1/reservations', reservationRouter);
 app.use('/api/v1/restaurants', restRouter);
