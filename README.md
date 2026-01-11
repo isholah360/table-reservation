@@ -117,29 +117,39 @@ Peak hours are hardcoded; not configurable per restaurant.
 🏨 Restaurant APIs
 
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/create 
+
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/getRestaurants 
+
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/getRestaurants/:id 
+
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/updateRestaurants/:id 
+
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/deleteRestaurants/:id
 
 🪑 Table APIs
 
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/createTable 
+
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/getTables 
+
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/tables/:id 
+
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/updateTables/:id 
+
 https://table-reservation-alpha.vercel.app/api/v1/restaurants/deleteTables/:id
 
 
 Reservation API Endpoints:
 
-https://table-reservation-alpha.vercel.app/api/v1/reservations/createReservation 
+https://table-reservation-alpha.vercel.app/api/v1/reservations/createReservation
+
 https://table-reservation-alpha.vercel.app/api/v1/reservations/updateReservation/:id 
+
 https://table-reservation-alpha.vercel.app/api/v1/reservations/deleteReservation/:id 
 
 Get WaitList Api 
 
-https://table-reservation-alpha.vercel.app /api/v1/waitlist/restaurants/:restaurantId
+https://table-reservation-alpha.vercel.app/api/v1/waitlist/restaurants/:restaurantId
 
 🛠️ Setup Instructions
 Prerequisites
@@ -192,3 +202,45 @@ Caching: Add Redis to cache table availability during peak hours
 Asynchronous Processing: Offload notifications to queues (e.g., BullMQ)
 Multi-Region Deployment: Deploy Vercel instances per geographic region with localized DBs
 The current UUID-based relationships and stateless API design make it trivial to support thousands of restaurants without code changes.
+
+Note 
+
+For your local api 
+
+🌐 API Endpoints
+
+🏨 Restaurant APIs
+
+/api/v1/restaurants/create 
+
+/api/v1/restaurants/getRestaurants 
+
+/api/v1/restaurants/getRestaurants/:id 
+
+/api/v1/restaurants/updateRestaurants/:id
+
+/api/v1/restaurants/deleteRestaurants/:id
+
+🪑 Table APIs
+
+/api/v1/restaurants/createTable 
+
+/api/v1/restaurants/getTables 
+
+/api/v1/restaurants/tables/:id 
+
+/api/v1/restaurants/updateTables/:id 
+
+/api/v1/restaurants/deleteTables/:id
+
+Reservation API Endpoints:
+
+/api/v1/reservations/createReservation
+
+/api/v1/reservations/updateReservation/:id
+
+/api/v1/reservations/deleteReservation/:id
+
+Get WaitList Api
+
+/api/v1/waitlist/restaurants/:restaurantId
