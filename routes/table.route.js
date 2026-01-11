@@ -13,7 +13,8 @@ const router = express.Router();
 router.post("/createTable", createTable);
 router.get("/getTables", getTables);
 router.get("/tables/:id", getTableById);
-router.put("/tables/:id", updateTable);
-router.delete("/tables/:id", deleteTable);
+router.put("/updateTables/:id", updateTable);
+router.delete("/deleteTables/:id", deleteTable);
+
 
 export default router;
